@@ -4,9 +4,22 @@
 # shinyChooser
 
 <!-- badges: start -->
+
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
-The goal of shinyChooser is to …
+This repository contains the `shinyChooser` shiny app with a single
+[shiny module]() that allows users to
+
+1.  identify all factor columns in a data.frame and
+2.  reorder their levels interactively.
+
+It is not a full-fledged application, but is intended as an example of
+how to implement a dynamic GUI within a shiny module. The module is
+defined in the `R/mod_revel.R` file, and relies on R code in the
+`R/chooser.R` and javascript code in the `inst/www/choose_bindings.js`
+files, respectively.
 
 ## Installation
 
@@ -18,35 +31,17 @@ You can install the development version of shinyChooser from
 devtools::install_github("tomsing1/shinyChooser")
 ```
 
-## Example
+Once the package and its dependencies have been installed, you can see
+an example of the `relevel` module in action by
 
-This is a basic example which shows you how to solve a common problem:
+1.  Cloning this repository, and
+2.  Sourcing the `dev/run_dev.R` file in your R session.
 
-``` r
-library(shinyChooser)
-## basic example code
-```
+## Acknowledgements / sources:
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
-
-``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
-```
-
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this.
-
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+- The `chooser.R` and `choose_bindings.js` code is from RStudio’s
+  [example
+  repository](https://github.com/rstudio/shiny-examples/tree/main/036-custom-input-control).
+- The structure of this repository, and various helper functions were
+  created with the [golem R
+  package](https://cran.r-project.org/package=golem).
