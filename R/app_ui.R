@@ -9,8 +9,8 @@ app_ui <- function(request) {
     # Leave this function for adding external resources
     golem_add_external_resources(),
     # Your application UI logic
-    fluidPage(
-      h1("shinyChooser")
+    bslib::page_fluid(
+      mod_relevel_ui("relevel_1")
     )
   )
 }
@@ -28,7 +28,6 @@ golem_add_external_resources <- function() {
     "www",
     app_sys("app/www")
   )
-
   tags$head(
     favicon(),
     bundle_resources(
